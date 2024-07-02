@@ -1,0 +1,12 @@
+mock:
+  mocks:
+    - path: /api/first
+      methods: [GET, POST]
+      responses:
+        GET: responses/first_get.json
+        POST: responses/first_post.json
+    - path: /api/second
+      methods: [DELETE, POST]
+      responses:
+        DELETE: responses/second_delete.json
+        POST: responses/second_post.json
