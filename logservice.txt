@@ -35,3 +35,19 @@ private func logSite(_ data: [String: String]?) {
         print("Error serializing data to JSON: \(error)")
     }
 }
+
+
+//====
+@RestController
+@RequestMapping("/api")
+public class LogController {
+
+    @PostMapping("/log")
+    public ResponseEntity<String> logData(@RequestBody Map<String, String> logData) {
+        // Process the log data
+        System.out.println("Received log data: " + logData);
+
+        // Return a response
+        return new ResponseEntity<>("Log data received successfully", HttpStatus.OK);
+    }
+}
